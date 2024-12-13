@@ -15,7 +15,7 @@
 pub mod core {
     struct Assert<const N: usize>;
     impl<const N: usize> Assert<N> {
-        const ASSERT: () = assert!(0 < N && N < 256, "invalid N!");
+        const ASSERT: () = assert!(0 < N && N < 255, "invalid N!");
     }
 
     /// Represents possible errors that may occur during byte stream mapping operations.
