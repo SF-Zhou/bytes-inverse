@@ -1,0 +1,17 @@
+[package]
+name = "bytes-inverse"
+version = "0.1.1"
+edition = "2021"
+
+authors = ["SF-Zhou <sfzhou.scut@gmail.com>"]
+homepage = "https://github.com/SF-Zhou/bytes-inverse"
+repository = "https://github.com/SF-Zhou/bytes-inverse"
+description = "A Rust library that provides order-inverting mapping for bytes where for any bytes a < b, we have map(a) > map(b)."
+license = "MIT OR Apache-2.0"
+
+[lib]
+doctest = true
+
+[dependencies]
+
+[dev-dependencies]
