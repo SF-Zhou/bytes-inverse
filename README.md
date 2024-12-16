@@ -7,7 +7,7 @@
 
 A Rust library that provides order-inverting mapping for bytes. It transforms input bytes while preserving their ordinal relationships in reverse order.
 
-1. For any input bytes a and b where a <= b, the mapping guarantees map(a) >= map(b).
+1. For any input bytes a and b where a < b, the mapping guarantees map(a) > map(b).
 2. For any input bytes a, the mapping guarantees unmap(map(a)) = a.
 
 ## Usage

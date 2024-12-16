@@ -1,17 +1,4 @@
-//! A byte stream mapping library that transforms input bytes into a new byte stream
-//! where for any bytes a < b, we have map(a) > map(b).
-//!
-//! This mapping is reversible through the unmap function.
-//!
-//! # Example
-//! ```
-//! use bytes_inverse::{map, unmap};
-//!
-//! let input = vec![1, 2, 3];
-//! let mapped = map(&input);
-//! let unmapped = unmap(&mapped).unwrap();
-//! assert_eq!(input, unmapped);
-//! ```
+#[doc = include_str!("../README.md")]
 pub mod core {
     struct Assert<const N: usize>;
     impl<const N: usize> Assert<N> {
@@ -131,7 +118,7 @@ pub use core::Error;
 /// Maps a byte stream using the default group size (N=8).
 ///
 /// This is a convenience wrapper around core::map with N=8.
-/// See core::map for detailed documentation.
+/// See [`core::map`] for detailed documentation.
 #[inline(always)]
 pub fn map(bytes: &[u8]) -> Vec<u8> {
     core::map::<8>(bytes)
@@ -140,7 +127,7 @@ pub fn map(bytes: &[u8]) -> Vec<u8> {
 /// Unmaps a byte stream using the default group size (N=8).
 ///
 /// This is a convenience wrapper around core::unmap with N=8.
-/// See core::unmap for detailed documentation.
+/// See [`core::unmap`] for detailed documentation.
 #[inline(always)]
 pub fn unmap(bytes: &[u8]) -> std::result::Result<Vec<u8>, Error> {
     core::unmap::<8>(bytes)
